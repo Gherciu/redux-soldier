@@ -1,11 +1,9 @@
-import { toNumber } from 'redux-soldier-utils'
-import { ReduxSoldier, TSum } from '../@types'
-
-const sum: TSum = (a, b) => toNumber(a) + toNumber(b)
+import reduxSoldierMiddleware from './reduxSoldierMiddleware'
+import { ReduxSoldier } from '../@types'
 
 const reduxSoldier: ReduxSoldier = {
-  sum,
+  reduxSoldierMiddleware,
 }
 
-export { sum }
+export { reduxSoldierMiddleware }
 export default reduxSoldier
