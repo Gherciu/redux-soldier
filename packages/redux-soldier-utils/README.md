@@ -8,8 +8,6 @@
 [![GitHub](https://img.shields.io/github/license/Gherciu/redux-soldier)](https://github.com/Gherciu/redux-soldier/blob/master/LICENSE)
 [![Multipack](https://img.shields.io/badge/Generated%20from-Gherciu%2Fmultipack-green)](https://github.com/Gherciu/multipack)
 
-## WORK IN PROGRESS
-
 ## Contributing
 
 1. Fork it!

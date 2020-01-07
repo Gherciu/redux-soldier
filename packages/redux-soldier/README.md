@@ -8,7 +8,55 @@
 [![GitHub](https://img.shields.io/github/license/Gherciu/redux-soldier)](https://github.com/Gherciu/redux-soldier/blob/master/LICENSE)
 [![Multipack](https://img.shields.io/badge/Generated%20from-Gherciu%2Fmultipack-green)](https://github.com/Gherciu/multipack)
 
-## WORK IN PROGRESS
+## Getting started
+
+```bash
+npm install redux-soldier
+```
+
+Then, to enable `redux-soldier`, use `applyMiddleware()`:
+
+```js
+import { createStore, applyMiddleware } from 'redux'
+import { reduxSoldierMiddleware } from 'redux-soldier'
+import rootReducer from './reducers'
+
+const store = createStore(rootReducer, applyMiddleware(reduxSoldierMiddleware))
+```
+
+## What can `redux-soldier`
+
+#### It can dispatch multiple actions, if provided argument is an `array` of actions.
+
+```js
+dispatch([
+  addToDo('Learn how to use redux-soldier 👨🏼‍✈️'),
+  addToDo('Install redux-soldier and start using in my project'),
+])
+```
+
+#### It can dispatch async actions, if provided argument is a `function`. Works same as `redux-thunk`
+
+```js
+dispatch(fetchUser)
+// also it can dispatch multiple async actions
+dispatch([fetchUser, fetchUserWishList])
+```
+
+#### It can create an `action` and dispatch this.
+
+```js
+dispatch('ADD_TODO', 'Learn how to use redux-soldier 👨🏼‍✈️')
+/* 
+  it create {type: 'ADD_TODO', payload: 'Learn how to use redux-soldier 👨🏼‍✈️'} and then dispatches this action
+  first argument represent 'action type' and last 'action payload'
+*/
+// also it can create and dispatch multiple actions
+dispatch([
+  ['ADD_TODO', 'Learn how to use redux-soldier 👨🏼‍✈️'],
+  ['ADD_TODO', 'Install redux-soldier and start using in my project'],
+])
+```
 
 ## Contributing
 
