@@ -1,7 +1,7 @@
 {
-  "name": "multipack-core",
-  "description": "Simple monorepo template repository.",
-  "version": "1.0.14",
+  "name": "redux-soldier",
+  "description": "👨🏼‍✈️ redux-soldier is a redux middleware that can handle 'dispatch method' arguments in a smart way",
+  "version": "1.0.0",
   "license": "MIT",
   "author": {
     "name": "Gherciu Gheorghe",
@@ -9,16 +9,16 @@
     "url": "https://gherciu.github.io/portfolio/"
   },
   "keywords": [
-    "lerna",
-    "monorepo",
-    "multipack"
+    "redux",
+    "redux-middleware",
+    "redux-soldier"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gherciu/multipack"
+    "url": "https://github.com/Gherciu/redux-soldier"
   },
   "bugs": {
-    "url": "https://github.com/Gherciu/multipack/issues"
+    "url": "https://github.com/Gherciu/redux-soldier/issues"
   },
   "main": "./build/index.js",
   "types": "./@types",
@@ -35,7 +35,7 @@
     "webpack-cli": "^3.3.8"
   },
   "dependencies": {
-    "multipack-utils": "^1.0.13"
+    "redux-soldier-utils": "^1.0.0"
   },
   "gitHead": "e5f694604ed9977f614ecdb25eea64de748a7705"
 }

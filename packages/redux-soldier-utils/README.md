@@ -1,8 +1,8 @@
 <div align="center">
   <img width="200" height="200"
     src="https://raw.githubusercontent.com/Gherciu/redux-soldier/master/logo.png">
-  <h1>redux-soldier</h1>
-  <p>👨🏼‍✈️ redux-soldier is a redux middleware that can handle 'dispatch method' arguments in a smart way</p>
+  <h1>redux-soldier-utils</h1>
+  <p>A set of utils for redux-soldier monorepo repository. Part of <a href="https://github.com/Gherciu/redux-soldier">redux-soldier</a> monorepo</p>
 </div>
 
 [![GitHub](https://img.shields.io/github/license/Gherciu/redux-soldier)](https://github.com/Gherciu/redux-soldier/blob/master/LICENSE)

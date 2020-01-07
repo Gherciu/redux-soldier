@@ -1,10 +1,10 @@
 export type TSum = (a: number | string, b: number | string) => number
 
-export interface Multipack {
+export interface ReduxSoldier {
   sum: TSum
 }
 
 export const sum: TSum
-declare const multipack: Multipack
+declare const reduxSoldier: ReduxSoldier
 
-export default multipack
+export default reduxSoldier
