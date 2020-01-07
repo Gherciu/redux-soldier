@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "multipack-e2e-tests",
+  "scripts": {
+    "test": "jest",
+    "watch:test": "jest --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "ts-jest": "^24.1.0",
+    "jest": "^24.9.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "multipack-core": "^1.0.0"
+  }
+}
