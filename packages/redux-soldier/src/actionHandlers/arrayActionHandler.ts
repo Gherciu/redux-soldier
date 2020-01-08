@@ -4,9 +4,12 @@ import { TArrayActionHandler } from '../../@types'
 import functionActionHandler from './functionActionHandler'
 
 const arrayActionHandler: TArrayActionHandler = ({ store, action }) => {
-  return Array(action).map((rawAction: any): any => {
-    if (isFunction(rawAction))
+  return action.map((rawAction: any): any => {
+    if (isFunction(rawAction)) {
       return functionActionHandler({ store, action: rawAction })
+    }
+    // if is default/traditional action object
+    store.dispatch(rawAction)
     return rawAction
   })
 }

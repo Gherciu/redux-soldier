@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type TDispatch = (action: TAction) => any
+/* eslint-disable import/no-extraneous-dependencies */
+import { Middleware, MiddlewareAPI, Dispatch } from 'redux'
+
+export type TDispatch = Dispatch
 
 export type TGetState = () => any
 
@@ -12,16 +15,14 @@ export type TAction =
   | TThunkAction[]
   | string[]
   | Function[]
+  | object[]
   | string
   | object
 
-export interface Store {
-  dispatch: TDispatch
-  getState: TGetState
-}
+export type TStore = MiddlewareAPI
 
 export interface ActionHandlerParam {
-  store: Store
+  store: TStore
   action: TAction
 }
 
@@ -29,20 +30,21 @@ export interface ThunkActionHandlerParam extends ActionHandlerParam {
   action: TThunkAction
 }
 
-export type TFunctionActionHandler = (arg: ThunkActionHandlerParam) => any
-
-export type TArrayActionHandler = (arg: ActionHandlerParam) => any
-
-export type TReduxSoldierMiddleware = ({
-  dispatch,
-  getState,
-}: Store) => (next: TNext) => (action: TAction) => any
-
-export interface ReduxSoldier {
-  reduxSoldierMiddleware: TReduxSoldierMiddleware
+export interface ArrayActionHandlerParam extends ActionHandlerParam {
+  action: any[]
 }
 
-export const reduxSoldierMiddleware: TReduxSoldierMiddleware
+export type TFunctionActionHandler = (arg: ThunkActionHandlerParam) => any
+
+export type TArrayActionHandler = (arg: ArrayActionHandlerParam) => any
+
+export type TReduxSoldierMiddleware = Middleware
+
+export interface ReduxSoldier {
+  reduxSoldierMiddleware: Middleware
+}
+
+export const reduxSoldierMiddleware: Middleware
 declare const reduxSoldier: ReduxSoldier
 
 export default reduxSoldier
