@@ -29,33 +29,54 @@ const store = createStore(rootReducer, applyMiddleware(reduxSoldierMiddleware))
 #### It can dispatch `thunk` actions, if provided argument is a `function`. In this case works same as `redux-thunk`
 
 ```js
-dispatch(fetchUser())
+dispatch(fetchUser()) // thunk action
+
 // also it can dispatch multiple thunk actions
-dispatch([fetchUser(), fetchUserWishList()])
+
+dispatch([
+  fetchUser(), // thunk action
+  fetchUserWishList(), // thunk action
+])
 ```
 
 #### It can dispatch multiple actions, if provided argument is an `array` of actions.
 
 ```js
 dispatch([
-  addToDo('Learn how to use redux-soldier 👨🏼‍✈️'),
-  addToDo('Install redux-soldier and start using in my project'),
+  addToDo('Learn how to use redux-soldier 👨🏼‍✈️'), // traditional action creator
+  { type: 'INCREMENT' }, // traditional action
 ])
 ```
 
-#### It can create an `action` and dispatch this. Is a simple replacement for `actionCreators`
+#### It can dispatch multiple `mixed actions`, if provided argument is an `array` of actions.
 
 ```js
-dispatch('ADD_TODO', 'Learn how to use redux-soldier 👨🏼‍✈️')
-/* 
-  it create {type: 'ADD_TODO', payload: 'Learn how to use redux-soldier 👨🏼‍✈️'} and then dispatches this action
-  first argument represent 'action type' and last 'action payload'
-*/
-// also it can create and dispatch multiple actions
 dispatch([
-  ['ADD_TODO', 'Learn how to use redux-soldier 👨🏼‍✈️'],
-  ['ADD_TODO', 'Install redux-soldier and start using in my project'],
+  fetchUser(), // thunk action
+  addToDo('Learn how to use redux-soldier 👨🏼‍✈️'), // traditional action creator
+  { type: 'INCREMENT' }, // traditional action
 ])
+```
+
+#### It can return a `promise` or `array of promises` if provided argument is a `async thunk action` or an `array` of `thunk actions`.
+
+Note: if is provided an array of mixed actions it returns only an array of thunk actions promises
+
+```js
+dispatch(fetchUser()).then(response => {
+  /* do stuff */
+})
+
+// or multiple thunc actions
+
+dispatch([
+  fetchUser(), // thunk action
+  fetchUserWishList(), // thunk action
+]).forEach(promise => {
+  promise.then(response => {
+    // do stuff
+  })
+})
 ```
 
 ## Contributing
