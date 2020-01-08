@@ -26,6 +26,14 @@ const store = createStore(rootReducer, applyMiddleware(reduxSoldierMiddleware))
 
 ## What can `redux-soldier`
 
+#### It can dispatch `thunk` actions, if provided argument is a `function`. In this case works same as `redux-thunk`
+
+```js
+dispatch(fetchUser())
+// also it can dispatch multiple thunk actions
+dispatch([fetchUser(), fetchUserWishList()])
+```
+
 #### It can dispatch multiple actions, if provided argument is an `array` of actions.
 
 ```js
@@ -35,15 +43,7 @@ dispatch([
 ])
 ```
 
-#### It can dispatch async actions, if provided argument is a `function`. Works same as `redux-thunk`
-
-```js
-dispatch(fetchUser)
-// also it can dispatch multiple async actions
-dispatch([fetchUser, fetchUserWishList])
-```
-
-#### It can create an `action` and dispatch this.
+#### It can create an `action` and dispatch this. Is a simple replacement for `actionCreators`
 
 ```js
 dispatch('ADD_TODO', 'Learn how to use redux-soldier 👨🏼‍✈️')
