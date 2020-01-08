@@ -6,7 +6,6 @@ const arrayActionHandler: TArrayActionHandler = ({ store, action, next }) => {
   Array(action).forEach((rawAction: any): any => {
     if (typeof rawAction === 'function')
       functionActionHandler({ store, action: rawAction, next })
-    next(action)
   })
 }
 

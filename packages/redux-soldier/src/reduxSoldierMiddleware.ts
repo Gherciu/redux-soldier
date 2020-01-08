@@ -8,7 +8,7 @@ const reduxSoldierMiddleware: TReduxSoldierMiddleware = store => {
     if (typeof action === 'function')
       functionActionHandler({ store, next, action })
     if (Array.isArray(action)) arrayActionHandler({ store, next, action })
-    next(action)
+    return next(action)
   }
 }
 
