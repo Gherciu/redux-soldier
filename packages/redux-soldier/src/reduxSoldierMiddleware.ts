@@ -6,8 +6,8 @@ import { TReduxSoldierMiddleware } from '../@types'
 const reduxSoldierMiddleware: TReduxSoldierMiddleware = store => {
   return (next: any) => (action: any): any => {
     if (typeof action === 'function')
-      functionActionHandler({ store, next, action })
-    if (Array.isArray(action)) arrayActionHandler({ store, next, action })
+      return functionActionHandler({ store, action })
+    if (Array.isArray(action)) return arrayActionHandler({ store, action })
     return next(action)
   }
 }

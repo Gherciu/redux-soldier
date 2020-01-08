@@ -23,7 +23,6 @@ export interface Store {
 export interface ActionHandlerParam {
   store: Store
   action: TAction
-  next: TNext
 }
 
 export interface ThunkActionHandlerParam extends ActionHandlerParam {

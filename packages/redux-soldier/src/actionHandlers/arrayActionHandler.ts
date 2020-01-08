@@ -2,10 +2,11 @@
 import { TArrayActionHandler } from '../../@types'
 import functionActionHandler from './functionActionHandler'
 
-const arrayActionHandler: TArrayActionHandler = ({ store, action, next }) => {
-  Array(action).forEach((rawAction: any): any => {
+const arrayActionHandler: TArrayActionHandler = ({ store, action }) => {
+  return Array(action).map((rawAction: any): any => {
     if (typeof rawAction === 'function')
-      functionActionHandler({ store, action: rawAction, next })
+      return functionActionHandler({ store, action: rawAction })
+    return rawAction
   })
 }
 
