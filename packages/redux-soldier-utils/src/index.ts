@@ -1,10 +1,11 @@
-import { TToNumber, ReduxSoldierUtils } from '../@types'
-
-const toNumber: TToNumber = value => Number(value)
+import isFunction from './isFunction'
+import isArray from './isArray'
+import { ReduxSoldierUtils } from '../@types'
 
 const reduxSoldierUtils: ReduxSoldierUtils = {
-  toNumber,
+  isFunction,
+  isArray,
 }
 
-export { toNumber }
+export { isFunction, isArray }
 export default reduxSoldierUtils

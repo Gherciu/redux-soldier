@@ -1,5 +1,9 @@
 module.exports = {
-  collectCoverageFrom: ['packages/**/*.(ts)'],
+  collectCoverageFrom: [
+    'packages/**/*.(ts)',
+    '!packages/redux-soldier/src/index.(ts)',
+    '!packages/redux-soldier-utils/src/index.(ts)',
+  ],
   coverageThreshold: {
     global: {
       statements: 100,

@@ -1,10 +1,17 @@
-export type TToNumber = (value?: string | number) => number
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+export type TIsFunction = (arg: any) => boolean
+
+export type TIsArray = (arg: any) => boolean
 
 export interface ReduxSoldierUtils {
-  toNumber: TToNumber
+  isFunction: TIsFunction
+  isArray: TIsArray
 }
 
-export const toNumber: TToNumber
+export const isFunction: TIsFunction
+export const isArray: TIsArray
+
 declare const reduxSoldierUtils: ReduxSoldierUtils
 
 export default reduxSoldierUtils
