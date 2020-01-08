@@ -1,9 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import functionActionHandler from './actionHandlers/functionActionHandler'
+import arrayActionHandler from './actionHandlers/arrayActionHandler'
 import { TReduxSoldierMiddleware } from '../@types'
 
-const reduxSoldierMiddleware: TReduxSoldierMiddleware = () => {
+const reduxSoldierMiddleware: TReduxSoldierMiddleware = store => {
   return (next: any) => (action: any): any => {
-    return next(action)
+    if (typeof action === 'function')
+      functionActionHandler({ store, next, action })
+    if (Array.isArray(action)) arrayActionHandler({ store, next, action })
+    next(action)
   }
 }
 
