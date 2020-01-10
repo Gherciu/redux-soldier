@@ -2,7 +2,7 @@
   <img width="200" height="200"
     src="https://raw.githubusercontent.com/Gherciu/redux-soldier/master/logo.png">
   <h1>redux-soldier-utils</h1>
-  <p>A set of utils for redux-soldier monorepo repository. Part of <a href="https://github.com/Gherciu/redux-soldier">redux-soldier</a> monorepo</p>
+  <p>A set of utils for redux-soldier package. Part of <a href="https://github.com/Gherciu/redux-soldier">redux-soldier</a> monorepo</p>
 </div>
 
 [![GitHub](https://img.shields.io/github/license/Gherciu/redux-soldier)](https://github.com/Gherciu/redux-soldier/blob/master/LICENSE)
