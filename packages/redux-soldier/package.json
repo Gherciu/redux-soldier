@@ -11,7 +11,8 @@
   "keywords": [
     "redux",
     "redux-middleware",
-    "redux-soldier"
+    "redux-soldier",
+    "multiple-actions"
   ],
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "redux-soldier-utils",
-  "description": "👨🏼‍✈️ redux-soldier is a redux middleware that can handle 'dispatch method' arguments in a smart way",
+  "description": "A set of utils for redux-soldier package.",
   "version": "1.0.6",
   "license": "MIT",
   "author": {
@@ -12,7 +12,8 @@
     "redux",
     "redux-middleware",
     "redux-soldier",
-    "redux-soldier-utils"
+    "redux-soldier-utils",
+    "multiple-actions"
   ],
   "repository": {
     "type": "git",
