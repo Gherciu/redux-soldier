@@ -1,7 +1,7 @@
 {
   "name": "redux-soldier-utils",
   "description": "A set of utils for redux-soldier package.",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "author": {
     "name": "Gherciu Gheorghe",
